@@ -1,0 +1,57 @@
+<div class=".container">
+  <div class="row">
+
+    <router-outlet>
+      <div *ngIf="showloading" class="spinner" ></div>
+    </router-outlet>
+   <div class="col-12">
+     <h1>Accounts</h1>
+   </div>
+   <div class="col-7">
+   <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search" (keyup)="searchitem();">
+    </div>
+  </div>
+   <br>
+   <div class="col-12" id="details">
+     <table class="table">
+       <thead>
+         <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>Account number</th>
+           <th>Account Type</th>
+           <th>Activation code</th>
+           <th>DOB</th>
+           <th>Date of cretion</th>
+           <th>Email</th>
+           <th>password</th>
+           <th>Balamnce</th>
+           <th>Loan</th>
+           <th>Loan Amount</th>
+           <th>Loan status</th>
+           <th>Verified</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let acc of account" (click)="user_details(acc.ID)" class="pointercursor">
+            <td>{{acc.ID}}</td>
+            <td>{{acc.Name}}</td>
+            <td>{{acc.Account_number}} </td>
+            <td>{{acc.Account_type}}</td>
+            <td>{{acc.Activationcode}}</td>
+            <td>{{acc.DOB|date}}</td>
+            <td>{{acc.Date_of_creation|date}}</td>
+            <td>{{acc.Email_address}}</td>
+            <td>{{acc.Password}}</td>
+            <td>{{acc.Balance|currency:'EUR'}}</td>
+            <td> {{acc.Loan}}</td>
+            <td>{{acc.Loan_amount|currency:'EUR'}}</td>
+           <td>{{acc.Loan_status}}</td>
+           <td> {{acc.Verified}}</td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+  </div>
+</div>

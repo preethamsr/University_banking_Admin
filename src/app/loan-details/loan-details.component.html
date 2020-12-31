@@ -1,0 +1,66 @@
+<div class=".container">
+  <div class="row">
+    <router-outlet>
+      <div class="spinner" *ngIf="showloading"></div>
+    </router-outlet>
+    <div class="col-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+           Loan ID
+          </th>
+          <th>Income</th>
+          <th>co-applicant Income</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Loan Amount</th>
+          <th>Other emi</th>
+          <th>Tenure</th>
+          <th>Account ID</th>
+          <th>Date of apply</th>
+          <th>Date of approval</th>
+          <th>Credit history</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let ln of loan">
+          <td>{{ln.LoanID|number}}</td>
+          <td>{{ln.Income|currency:'EUR'}}</td>
+          <td>{{ln.Co_applicant_income|currency:'EUR'}}</td>
+          <td>{{ln.Age}}</td>
+          <td>{{ln.Gender}}</td>
+          <td>{{ln.Loan_amount|currency:'EUR'}}</td>
+          <td>{{ln.Other_emi|currency:'EUR'}}</td>
+          <td>{{ln.Tenure}}</td>
+          <td>{{ln.Account_ID}}</td>
+          <td>{{ln.Date_of_apply|date}}</td>
+          <td>{{ln.Date_of_approval|date}}</td>
+          <td>{{ln.Credit_History}}</td>
+          <td>{{ln.Status}}</td>
+          <td *ngIf="ln.Status==false">
+            <button type="submit" class="btn" (click)="evaluate(ln.Income,ln.Other_emi,ln.Tenure,ln.Loan_amount,ln.LoanID)">Evaluate</button>
+          </td>
+          </tr>
+        <tr *ngIf="!loan ||loan.length==0">
+          <td><p>No Records Found</p></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="col-12">
+    <div class="center">
+      <p>{{message}}</p>
+    </div>
+    <div>
+      <p>{{eligible}}</p>
+    </div>
+<div>
+  {{loan_approval_message}}
+</div>
+    </div>
+    </div>
+  </div>
+</div>
+

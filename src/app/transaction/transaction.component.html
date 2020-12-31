@@ -1,0 +1,41 @@
+<div class=".container">
+  <div class="row">
+<router-outlet>
+  <div *ngIf="showloading" class="spinner "></div>
+</router-outlet>
+
+<div class="col-12">
+<div class="row">
+<div class="col-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Account id</th>
+        <th>To account</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Beneficiary Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let trans of transaction">
+       <td>{{trans.Transaction_ID}}</td>
+       <td>{{trans.Account_id}}</td>
+       <td>{{trans.To_account}}</td>
+       <td>{{trans.Amount|currency:'EUR'}}</td>
+       <td>{{trans.Date|date}}</td>
+       <td>{{trans.Beneficiary}}</td>
+      </tr>
+      <tr *ngIf="!transaction || transaction.length==0">
+      <td><p>No Records Found</p></td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>

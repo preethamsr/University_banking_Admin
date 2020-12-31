@@ -1,0 +1,22 @@
+.center{
+  margin: auto;
+  width: 30%;
+
+  padding: 10px;
+  margin-top: 10%;
+  opacity: 10px;
+}
+h1{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  font-style: italic;
+}
+label{
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 25px;
+}
+.btn{
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}

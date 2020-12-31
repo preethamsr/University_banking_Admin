@@ -1,0 +1,30 @@
+<div class=".container">
+  <div class="row">
+<router-outlet></router-outlet>
+<div class="center col-7">
+  <form>
+    <div class="header">
+      <h1>Login</h1>
+    </div>
+  <div>
+  <label for="name">Username</label>
+  <input type="text" id="name" class="form-control" [(ngModel)]="ld.username" [ngModelOptions]="{standalone: true}">
+</div>
+<br>
+<div>
+  <label for="password">Password</label>
+  <input type="password" id="password" class="form-control" [(ngModel)]="ld.password" [ngModelOptions]="{standalone: true}">
+</div>
+  <br>
+  <div>
+    <button type="submit" class="btn btn-success" (click)="login()">Login</button>
+    <button type="reset" class="btn btn-success" style="margin-left: 5px;">Clear</button>
+  </div>
+  <div>
+    {{message}}
+  </div>
+</form>
+</div>
+</div>
+</div>
+

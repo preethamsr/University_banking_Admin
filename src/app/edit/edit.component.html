@@ -1,0 +1,59 @@
+<div class=".container">
+  <div class="row">
+
+<router-outlet>
+  <div class="spinner" *ngIf="showloading">
+  </div>
+</router-outlet>
+<div class="col-8" >
+  <div class="main">
+  <div *ngFor="let acc of account">
+    <div>
+      <label for="name">Name</label>
+    </div>
+    <div>
+      <input type="text" id="name" class="form-control" placeholder="{{acc.Name}}" [(ngModel)]="modific.Name">
+    </div>
+    <div>
+      <label for="password">Password</label>
+    </div>
+    <div>
+      <input type="text" id="password" class="form-control" placeholder="{{acc.Password}}" [(ngModel)]="modific.Password">
+    </div>
+    <div>
+      <label for="account_number">Account Number</label>
+    </div>
+    <div>
+      <input type="text" id="account_number" class="form-control" placeholder="{{acc.Account_number}}" [(ngModel)]="modific.Account_number">
+    </div>
+    <div>
+      <label for="balance">Balance</label>
+    </div>
+    <div>
+      <input type="text" id="balance" class="form-control" placeholder="{{acc.Balance|currency:'EUR'}}" [(ngModel)]="modific.Balance">
+    </div>
+    <div>
+      <label for="DOB">Date of birth</label>
+    </div>
+    <div>
+      <input type="date"  id="DOB" class="form-control" placeholder="{{acc.DOB|date}}"[(ngModel)]="modific.DOB">
+    </div>
+    <div>
+      <Label for="email">Email</Label>
+    </div>
+    <div>
+      <input type="email" id="emial" class="form-control" placeholder="{{acc.Email_address}}" [(ngModel)]="modific.Email_address">
+    </div>
+    <div>
+      <button type="submit" class="btn" (click)="Update(acc.ID);">Update</button>
+
+    </div>
+  </div>
+</div>
+<div class="col-9">
+  <div *ngIf="Loading">Updating...</div>
+<p>{{message}}</p>
+</div>
+  </div>
+</div>
+</div>

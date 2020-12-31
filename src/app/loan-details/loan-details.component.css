@@ -1,11 +1,8 @@
-a{
+tbody{
   font-family: 'Times New Roman', Times, serif;
-  font-style: italic;
-  font-size: 25px;
 }
-.navbar-brand{
+thead{
   font-family: 'Times New Roman', Times, serif;
-  font-style: italic;
 }
 .spinner {
   border: 16px solid silver;
@@ -22,9 +19,7 @@ a{
   0% { transform: rotate(0deg) }
   100% { transform: rotate(-360deg) }
 }
-.log{
-
-  position:fixed;
-  right:10px;
-  top:5px;
+tr:hover{
+  background-color: whitesmoke;
 }
+

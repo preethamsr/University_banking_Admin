@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
+              "/Users/preethamhd/BankingProjectAdmin/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "/Users/preethamhd/BankingProjectAdmin/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "/Users/preethamhd/BankingProjectAdmin/node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

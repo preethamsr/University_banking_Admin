@@ -1,0 +1,81 @@
+<div class=".container">
+  <div class="row" >
+
+    <router-outlet>
+      <div *ngIf="showloading" class="spinner"></div>
+    </router-outlet>
+<div class="col-8" id='main'>
+<div *ngFor="let acc of account">
+  <div class="col-8">
+  <div>
+  <label for='name'>Name</label>
+</div>
+<div>
+  <input type="text" id="name" class="form-control" placeholder="{{acc.Name}}" readonly>
+</div>
+<div>
+  <label for="password">Password</label>
+</div>
+<div>
+  <input type="text" id="password" class="form-control" placeholder="{{acc.Password}}" readonly>
+</div>
+<div>
+  <label for="email">Email</label>
+</div>
+<div>
+  <input type="text" id="emial" class="form-control" placeholder="{{acc.Email_address}}" readonly>
+</div>
+<div>
+  <label for="account_number">Account Number</label>
+</div>
+<div>
+  <input type="text" id="account_number" class="form-control" placeholder="{{acc.Account_number}}" readonly>
+</div>
+<div>
+  <Label for="balance">Balance</Label>
+</div>
+<div>
+  <input type="text" id="balance" class="form-control" placeholder="{{acc.Balance|currency:'EUR'}}" readonly>
+</div>
+<div>
+  <label for="doc">Date of creation</label>
+</div>
+<div>
+  <input type="text" id="doc" class="form-control" placeholder="{{acc.Date_of_creation|date}}" readonly>
+</div>
+<div>
+  <label for="loan_status">Loan Status</label>
+</div>
+<div>
+  <input type="text" id="loan_status" class="form-control" placeholder="{{acc.Loan_status}}" readonly>
+</div>
+<div>
+  <Label for="loan_amount">Loan Amount</Label>
+</div>
+<div>
+  <input type="text" id="loan_amount" class="form-control" placeholder="{{acc.Loan_amount}}" readonly>
+</div>
+<br>
+<div>
+
+    <button type="submit" class="btn" (click)="edit()">EDIT</button>
+
+
+    <button type="submit" class="btn" (click)="transaction();">TRANSACTION</button>
+
+
+    <button type="submit" class="btn" (click)="Loan();">LOAN</button>
+
+
+    <button type="submit" class="btn" (click)="Delete()">DELETE</button>
+
+</div>
+<div class="col-12">
+  <div *ngIf="deleting">Deleting...</div>
+  <p>{{message}}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

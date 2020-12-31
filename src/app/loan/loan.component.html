@@ -1,0 +1,51 @@
+<div class=".container">
+<div class="row">
+<router-outlet>
+  <div class="spinner" *ngIf="showloading"></div>
+</router-outlet>
+<div class="col-12">
+<div class="col-8">
+<div *ngFor="let ln of loan">
+  <div>
+  <div>
+ <label for="loan_id">Loan ID</label>
+ <input type="text" id="loan_id" class="form-control" placeholder="{{ln.LoanID}}" readonly>
+</div>
+<div>
+ <label for="income" >Income</label>
+ <input type="text" id="income" class="form-control" placeholder="{{ln.Income}}" readonly>
+</div>
+<div>
+ <label for="age">AGE</label>
+ <input type="text" id="age" class="form-control" placeholder="{{ln.Age}}" readonly>
+</div>
+<div>
+ <label for="loan_amount">Loan amount</label>
+ <input type="text" id="loan_amount" class="form-control" placeholder="{{ln.Loan_amount}}" readonly>
+</div>
+<div>
+ <label for="date_of_apply">Date of apply</label>
+ <input type="text" id="date_of_apply" class="form-control" placeholder="{{ln.Date_of_apply}}" readonly>
+</div>
+<div>
+ <label for="date_of_approval">Date of Approval</label>
+ <input type="text" class="form-control" id="date_of_approval" placeholder="{{ln.Date_of_approval}}" readonly>
+</div>
+<div>
+ <label for="status">Status</label>
+ <input type="text" class="form-control" id="status" placeholder="{{ln.Status}}" readonly>
+</div>
+</div>
+
+</div>
+<div *ngIf="!loan || loan.length==0">
+  <p>No Records Found</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
